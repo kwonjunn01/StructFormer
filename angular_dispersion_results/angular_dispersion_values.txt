@@ -1,0 +1,27 @@
+Angular Dispersion Analysis
+==================================================
+
+layer_0:
+  Overall Dispersion: 0.0543
+  Token 1 Dispersion: 0.0484
+  Token 2 Dispersion: 0.0497
+  Token 3 Dispersion: 0.0548
+
+layer_1:
+  Overall Dispersion: 0.0674
+  Token 1 Dispersion: 0.0355
+  Token 2 Dispersion: 0.0382
+  Token 3 Dispersion: 0.0278
+
+layer_2:
+  Overall Dispersion: 0.1130
+  Token 1 Dispersion: 0.1211
+  Token 2 Dispersion: 0.1120
+  Token 3 Dispersion: 0.1063
+
+layer_3:
+  Overall Dispersion: 0.1538
+  Token 1 Dispersion: 0.0411
+  Token 2 Dispersion: 0.0392
+  Token 3 Dispersion: 0.0641
+

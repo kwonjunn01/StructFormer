@@ -2,11 +2,11 @@ def build_model(config, args):
     model_type = config.MODEL.TYPE
     if model_type == 'cross-scale':
         if config.MODEL.CROS.GROUP_TYPE in ['constant', 'linear', 'linear_div', 'alter', '7_14']:
-            from .crossformer import CrossFormer
+            from .structformer import StructFormer
         else:
             raise NotImplementedError(f"Unkown group type: {args.group_type}")
 
-        model = CrossFormer(img_size=config.DATA.IMG_SIZE,
+        model = StructFormer(img_size=config.DATA.IMG_SIZE,
                                 patch_size=config.MODEL.CROS.PATCH_SIZE,
                                 in_chans=config.MODEL.CROS.IN_CHANS,
                                 num_classes=config.MODEL.NUM_CLASSES,

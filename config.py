@@ -62,7 +62,7 @@ _C.MODEL.LABEL_SMOOTHING = 0.1
 _C.MODEL.RETURN_DENSE = True
 _C.MODEL.MIX_TOKEN = True
 
-# CrossFormer parameters
+# StructFormer parameters
 _C.MODEL.CROS = CN()
 _C.MODEL.CROS.PATCH_SIZE = [4, 8, 16, 32]
 _C.MODEL.CROS.MERGE_SIZE = [[2, 4], [2,4], [2, 4]]
@@ -78,7 +78,7 @@ _C.MODEL.CROS.QK_SCALE = None
 _C.MODEL.CROS.APE = False
 _C.MODEL.CROS.PATCH_NORM = True
 
-# CrossFormer++ parameters
+# StructFormer++ parameters
 _C.MODEL.CROS.GROUP_TYPE = 'constant'
 _C.MODEL.CROS.USE_ACL = True
 _C.MODEL.CROS.USE_CPE = False
@@ -190,6 +190,7 @@ _C.EVAL_MODE = False
 # Test throughput only, overwritten by command line argument
 _C.THROUGHPUT_MODE = False
 # local rank for DistributedDataParallel, given by command line argument
+_C.VISUALIZATION = False
 _C.LOCAL_RANK = 0
 
 
@@ -242,6 +243,8 @@ def update_config(config, args):
         config.DATA.NUM_WORKERS = args.num_workers
     if args.throughput:
         config.THROUGHPUT_MODE = True
+    if args.vis:
+        config.VISUALIZATION = True
     if args.embed_dim:
         config.MODEL.CROS.EMBED_DIM = args.embed_dim
 
@@ -251,12 +254,12 @@ def update_config(config, args):
     # config.MODEL.MERGE_SIZE_AFTER = [args.merge_size_after1, args.merge_size_after2, args.merge_size_after3, []]
     config.DATA.DATASET = args.data_set
     config.DATA.IMG_SIZE = args.img_size
-    config.TRAIN.WARMUP_EPOCHS = args.warmup_epochs
-    config.TRAIN.EPOCHS = args.epochs
-    config.TRAIN.WEIGHT_DECAY = args.weight_decay
-    config.TRAIN.BASE_LR = args.lr
-    config.TRAIN.WARMUP_LR = args.warmup_lr
-    config.TRAIN.MIN_LR = args.min_lr
+    # config.TRAIN.WARMUP_EPOCHS = args.warmup_epochs
+    # config.TRAIN.EPOCHS = args.epochs
+    # config.TRAIN.WEIGHT_DECAY = args.weight_decay
+    # config.TRAIN.BASE_LR = args.lr
+    # config.TRAIN.WARMUP_LR = args.warmup_lr
+    # config.TRAIN.MIN_LR = args.min_lr
     config.MODEL.IMPL_TYPE = args.impl_type
     # set local rank for distributed training
     # config.LOCAL_RANK = args.local_rank

@@ -1,9 +1,61 @@
-output
-*.json
-__pycache__
-train.sh
-train_multi_machine.sh
-*_ori.sh
-ADEChallengeData2016
-mscoco
-tools
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Data and weights
+data/
+*.pth
+*.ckpt
+*.pkl
+*.npy
+*.npz
+
+# Outputs
+output/
+outputs/
+results/
+logs/
+*.log
+
+# Large directories
+apex/
+ssd/
+sssss/
+path/
+
+# Images and visualization
+semantic_masks/
+best_mask/
+*.png
+*.jpg
+*.jpeg
+
+# Temporary files
+*.tmp
+*~
+.DS_Store
+
+# Build
+build/
+dist/
+*.egg-info/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
